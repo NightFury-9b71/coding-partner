@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Demo Showcase - Chat Interface
 
-## Getting Started
+A showcase project demonstrating my skills in integrating modern web technologies to build a responsive chat interface with emotion detection.
 
-First, run the development server:
+## Project Description
 
+- Real-time chat interface with user/AI messages
+- Emotion detection with color-coded progress bars
+- Full markdown support including code blocks
+- Mobile-responsive design
+- Custom avatar system with SVG graphics
+- Modular component structure with TypeScript interfaces
+
+## Tech Stack
+
+- **Next.js 15** (latest version with App Router)
+- **PromptKit Library** for chat input components
+- **shadcn/ui** component library integration
+- **Tailwind CSS** for responsive design
+- **Custom component architecture** with proper TypeScript types
+
+## How to Clone and Run
+
+### Prerequisites
+- Node.js 18+ installed on your machine
+
+### Quick Start
+
+1. **Clone the repository**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/NightFury-9b71/coding-partner.git
+cd coding-partner
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install dependencies**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Run the development server**
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Open in browser**
+Navigate to `http://localhost:3000`
 
-## Learn More
+That's it! The chat interface should be running locally.
 
-To learn more about Next.js, take a look at the following resources:
+## What You'll See
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- A clean chat interface with sample conversation
+- Emotion tags below each message with progress bars
+- Responsive design that adapts to mobile screens
+- Markdown rendering for code examples
+- Custom avatars for user and AI messages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Integration Highlights
 
-## Deploy on Vercel
+### PromptKit Integration
+```tsx
+<PromptInput value={inputMessage} onValueChange={setInputMessage}>
+  <PromptInputTextarea placeholder="Type your message..." />
+  <PromptInputActions>
+    <button onClick={handleSend}>Send</button>
+  </PromptInputActions>
+</PromptInput>
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### shadcn/ui Message Components
+```tsx
+<Message className={message.role === 'user' ? 'flex-row-reverse' : ''}>
+  <MessageAvatar src="/user-avatar.svg" fallback="U" />
+  <MessageContent markdown={true}>
+    {message.content}
+  </MessageContent>
+</Message>
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### TypeScript Structure
+Organized with proper interfaces and modular architecture:
+- `src/types/chat.ts` - Type definitions
+- `src/components/EmotionTags.tsx` - Custom components
+- `src/data/chat-messages.ts` - Sample data
+- `src/utils/` - Utility functions
+
+This project demonstrates practical integration skills with modern React ecosystem tools while maintaining clean, maintainable code structure.
