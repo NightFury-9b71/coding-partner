@@ -16,7 +16,7 @@ const EmotionTags: React.FC<EmotionTagsProps> = ({
   const alignmentClass = align === 'right' ? 'justify-end mr-1' : 'ml-1';
 
   return (
-    <div className={`flex flex-wrap gap-2 mt-2 ${alignmentClass} ${className}`}>
+    <div className={`flex flex-col sm:flex-row sm:flex-wrap gap-2 mt-2 ${alignmentClass} ${className}`}>
       {emotions.map((emotion, index) => (
         <div key={index} className="flex items-center gap-1 text-xs">
           <span className="text-gray-600 min-w-0 truncate">{emotion.label}</span>
