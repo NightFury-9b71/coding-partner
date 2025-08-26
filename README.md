@@ -55,28 +55,6 @@ That's it! The chat interface should be running locally.
 - Markdown rendering for code examples
 - Custom avatars for user and AI messages
 
-## Integration Highlights
-
-### PromptKit Integration
-```tsx
-<PromptInput value={inputMessage} onValueChange={setInputMessage}>
-  <PromptInputTextarea placeholder="Type your message..." />
-  <PromptInputActions>
-    <button onClick={handleSend}>Send</button>
-  </PromptInputActions>
-</PromptInput>
-```
-
-### shadcn/ui Message Components
-```tsx
-<Message className={message.role === 'user' ? 'flex-row-reverse' : ''}>
-  <MessageAvatar src="/user-avatar.svg" fallback="U" />
-  <MessageContent markdown={true}>
-    {message.content}
-  </MessageContent>
-</Message>
-```
-
 ### TypeScript Structure
 Organized with proper interfaces and modular architecture:
 - `src/types/chat.ts` - Type definitions
